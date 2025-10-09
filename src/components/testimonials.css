@@ -1,44 +1,46 @@
-/* Team Cards Component - Unique CSS to avoid conflicts */
 .team-main-heading {
   text-align: center;
   font-size: 4.5rem;
   font-weight: 700;
   margin: 2rem 0;
-  color: #002d72;
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 35px;;
+  margin-bottom: 35px;
 }
 
 .team-group-image {
   display: block;
-  width: 90%;
-  max-width: 900px;
-  height: 500px;
-  margin: 0 auto 2rem;
+  width: 850px;
+  height: 300px;
+  margin: 0 auto;
   border-radius: 12px;
-  border: 4px solid #fff; /* clean white border */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 4px solid #00d4ff;
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* Added for better responsiveness */
 }
 
 .team-group-image:hover {
-  transform: scale(1.02); /* slight zoom */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25); /* deeper shadow */
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
 }
 
 .team-cards-container {
   width: 100%;
   min-height: 100vh;
   padding: 2rem 0;
-  /* Changed background from dark to light blue #CAF0F8 */
-  background: #caf0f8;
+  background: linear-gradient(
+          to bottom,
+          rgba(18, 105, 115, 0.3) 0%,
+          rgb(7, 49, 96) 100%
+  );
 }
 
 .team-cards-wrapper {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -47,31 +49,41 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* Reduced gap from 2rem to 0.5rem to decrease space between cards */
-  /* Reduced gap from 0.5rem to 0.25rem to further decrease space between cards */
-  gap: 5rem;
+  gap: 3rem;
   justify-content: center;
+  align-items: center;
 }
 
 .team-cards-section {
-  /* Reduced card width from 40% to 35% for more compact layout */
-  /* Reduced card width from 35% to 30% for more compact layout */
-  width: 30%;
-  max-width: 30%;
-  flex: 0 0 30%;
+  width: 25%;
+  max-width: 400px;
+  flex: 0 0 25%;
   box-sizing: border-box;
 }
 
+.team-cards-section-center {
+  width: 35%;
+  max-width: 600px;
+  flex: 0 0 35%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-group-image-container {
+  width: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .team-cards-section-left {
-  /* Reduced padding from 1rem to 0.25rem */
-  /* Reduced padding from 0.25rem to 0.125rem */
-  padding-right: 0.125rem;
+  padding-right: 5rem;
 }
 
 .team-cards-section-right {
-  /* Reduced padding from 1rem to 0.25rem */
-  /* Reduced padding from 0.25rem to 0.125rem */
-  padding-left: 0.125rem;
+  padding-left: 5rem;
 }
 
 .team-cards-heading {
@@ -84,16 +96,16 @@
   font-weight: bold;
   display: inline-block;
   margin: 0;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 102, 204, 0.4);
+  letter-spacing: 2px;
 }
 
 .team-cards-title-acm {
-  /* Changed color to #002D72 as requested */
-  color: #002d72;
+  color: #ffffff;
 }
 
 .team-cards-title-acmw {
-  /* Changed color to #002D72 for consistency */
-  color: #002d72;
+  color: #ffffff;
 }
 
 .team-card-carousel {
@@ -103,34 +115,25 @@
   margin: 0 auto;
 }
 
+/* Simplified card for image only */
 .team-card-member {
   position: relative;
-  /* Updated to professional white background with subtle shadow */
-  background: #ffffff;
+  background: transparent;
   border-radius: 16px;
-  padding: 2rem;
-  /* Enhanced shadow for more professional look */
-  box-shadow: 0 8px 32px rgba(0, 45, 114, 0.12);
-  transition: all 0.3s ease;
-  /* Updated border with professional navy color */
-  border: 1px solid rgba(0, 45, 114, 0.08);
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: all 0.5s ease;
 }
 
 .team-card-member.team-card-animating {
-  transform: scale(0.95);
-  opacity: 0.8;
+  transform: scale(0.95) rotateY(10deg);
+  opacity: 0.7;
 }
 
+/* Removed background since we don't need it */
 .team-card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Updated gradient with professional navy tones */
-  background: linear-gradient(135deg, rgba(0, 45, 114, 0.02) 0%, rgba(0, 45, 114, 0.04) 100%);
-  border-radius: 16px;
-  opacity: 0.5;
+  display: none;
 }
 
 .team-card-avatar-container {
@@ -138,189 +141,138 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* Removed margin since no other content */
 }
 
 .team-card-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  /* Removed box styling - no background, border, or shadow */
-  background: none;
+  background: transparent;
   border: none;
-  border-radius: 0;
-  width: 48px;
-  height: 48px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Changed to dark blue color #002D72 */
-  color: #002d72;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  /* Removed box-shadow */
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.team-card-carousel:hover .team-card-btn {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .team-card-btn:hover {
-  /* Simplified hover - just color change and slight scale */
-  color: #0066cc;
   transform: translateY(-50%) scale(1.2);
-  background: none;
-  box-shadow: none;
+  color: #ffffff;
 }
 
 .team-card-btn:active {
-  /* Simplified active state */
   transform: translateY(-50%) scale(1.1);
-  color: #002d72;
 }
 
 .team-card-btn-left {
-  /* Moved left arrow much closer to photo, from -20px to -10px */
-  left: 30px;
+  left: -20px;
 }
 
 .team-card-btn-right {
-  /* Moved right arrow much closer to photo, from -20px to -10px */
-  right: 30px;
+  right: -20px;
 }
 
 .team-card-avatar {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 300px; /* Increased size since it's the only content */
+  height: 300px;
   margin: 0 auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 102, 204, 0.4));
 }
 
 .team-card-avatar-ring {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 50%;
-  /* Updated gradient with professional navy and complementary colors */
-  background: linear-gradient(45deg, #002d72, #0066cc, #4a90e2);
-  /* Removed rotation animation to stop the spinning effect */
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 0;
+  background: linear-gradient(135deg, #00d4ff, #0066cc, #002d72, #4a90e2);
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .team-card-avatar-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 300px; /* Increased size */
+  height: 300px;
+  border-radius: 0;
   object-fit: cover;
   position: relative;
   z-index: 2;
-  border: 4px solid #caf0f8;
+  border: 4px solid #00d4ff;
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
 }
 
+.team-card-avatar-image:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: #4a90e2;
+  box-shadow:
+          inset 0 0 20px rgba(0, 212, 255, 0.2),
+          0 15px 40px rgba(0, 102, 204, 0.6);
+}
+
+/* Hide all member info content */
 .team-card-member-info {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.team-card-member-details {
-  margin-bottom: 1.5rem;
-}
-
-.team-card-member-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  /* Updated to professional navy color */
-  color: #002d72;
-  margin: 0 0 0.5rem 0;
-}
-
-.team-card-member-role {
-  font-size: 1rem;
-  /* Updated to professional gray color */
-  color: #4a5568;
-  margin: 0 0 1rem 0;
-}
-
-.team-card-member-category-badge {
-  display: inline-block;
-  /* Updated badge with professional navy background */
-  background: rgba(0, 45, 114, 0.08);
-  border: 1px solid rgba(0, 45, 114, 0.15);
-  border-radius: 20px;
-  padding: 0.25rem 0.75rem;
-}
-
-.team-card-member-category {
-  font-size: 0.875rem;
-  /* Updated category text to professional navy */
-  color: #002d72;
-  font-weight: 500;
-}
-
-.team-card-social-icons-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.team-card-social-icon-link {
-  color: #4a5568;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  /* Enhanced social icon styling with gradient and better shadows */
-  background: linear-gradient(135deg, rgba(0, 45, 114, 0.08), rgba(0, 102, 204, 0.05));
-  cursor: pointer;
-  border: 1px solid rgba(0, 45, 114, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 45, 114, 0.1);
-}
-
-.team-card-social-icon-link:hover {
-  color: #ffffff;
-  /* Enhanced hover state with gradient background */
-  background: linear-gradient(135deg, #002d72, #0066cc);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(0, 45, 114, 0.25);
-}
-
-.team-card-social-icon-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.team-card-social-icon-disabled:hover {
-  color: #4a5568;
-  background: rgba(0, 45, 114, 0.05);
-  transform: none;
-}
-
-.team-card-orcid-link {
-  font-size: 0.75rem;
-  font-weight: bold;
-  width: auto;
-  padding: 0 0.75rem;
-  border-radius: 20px;
+  display: none;
 }
 
 .team-cards-no-members {
-  /* Updated text color to professional navy */
-  color: #002d72;
+  color: #ffffff;
   text-align: center;
   padding: 2rem;
   font-size: 1.125rem;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .team-main-heading {
+    font-size: 4.5rem;
+  }
+
+  .team-group-image {
+    max-height: 350px;
+  }
+
+  .team-cards-section {
+    width: 28%;
+    flex: 0 0 28%;
+  }
+
+  .team-cards-section-center {
+    width: 38%;
+    flex: 0 0 38%;
+  }
+}
+
+@media (max-width: 960px) {
   .team-cards-row {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .team-cards-section {
@@ -329,42 +281,100 @@
     flex: none;
   }
 
-  .team-cards-section-left,
+  .team-cards-section-center {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    order: -1; /* Move team image to top */
+  }
+
+  .team-cards-section-left {
+    padding: 0;
+    order: 1; /* ACM comes second */
+  }
+
   .team-cards-section-right {
     padding: 0;
+    order: 2; /* ACM-W comes third */
   }
-}
-@media (max-width: 1024px) {
-  .team-main-heading {
-    font-size: 4.5rem;
+
+  .team-group-image-container {
+    width: 100%;
+    padding: 0 1rem; /* Added padding to prevent edge cutting */
+    box-sizing: border-box;
   }
 
   .team-group-image {
-    max-width: 90%;
-  }
-}
-
-/* Mobiles (≤768px) */
-@media (max-width: 768px) {
-  .team-main-heading {
-    font-size: 4rem;
-    letter-spacing: 1px;
+    width: 100%;
+    height: auto; /* Let height adjust automatically */
+    min-height: 200px;
+    max-height: 250px; /* Control maximum height on mobile */
+    object-fit: cover; /* Ensure image covers the area properly */
   }
 
-  .team-group-image {
-    max-width: 95%;
-    border-radius: 10px;
+  .team-card-avatar,
+  .team-card-avatar-image {
+    width: 220px;
+    height: 220px;
   }
-}
 
-/* Small Mobiles (≤480px) */
-@media (max-width: 480px) {
+  .team-card-carousel {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .team-main-heading {
     font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
   }
 
   .team-group-image {
-    max-width: 100%;
+    max-height: 250px;
+    border-radius: 10px;
+  }
+
+  .team-cards-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-main-heading {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .team-group-image {
+    max-height: 200px;
     border-radius: 8px;
+  }
+
+  .team-group-image-container {
+    padding: 0 0.5rem; /* Smaller padding on very small screens */
+  }
+
+  .team-cards-title {
+    font-size: 2rem;
+  }
+
+  .team-card-avatar,
+  .team-card-avatar-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .team-card-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .team-card-btn-left {
+    left: -15px;
+  }
+
+  .team-card-btn-right {
+    right: -15px;
   }
 }
